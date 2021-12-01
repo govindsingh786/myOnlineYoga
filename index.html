@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>myOnlineYoga</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- font awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/style.css"> -->
+
+
+  <!-- Favicon -->
+  <!-- <link rel="shortcut icon" type="image/icon" href="assets/images/favicon.ico" /> -->
+  <!-- Font Awesome -->
+  <link href="assets/css/font-awesome.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <!-- <link href="assets/css/bootstrap.css" rel="stylesheet"> -->
+  <!-- Slick slider -->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/slick.css" /> -->
+  <!-- Fancybox slider -->
+  <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" />
+  <!-- Animate css -->
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css" />
+  <!-- Progress bar  -->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/bootstrap-progressbar-3.3.4.css" /> -->
+  <!-- Theme color -->
+  <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="../css/animate.css">
+  <!-- Resource style -->
+  <link rel="stylesheet" href="../css/owl.carousel.css">
+  <link rel="stylesheet" href="../css/owl.theme.css">
+  <link rel="stylesheet" href="../css/ionicons.min.css">
+  <!-- Resource style -->
+  <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <!-- <script src="../javascript/javascript.js"></script>
+  <script src="../database.rules.json"></script>
+  <script src="../firebase.json"></script>
+  <script src="../package-lock.json"></script>
+  <link rel="stylesheet" href="../firebase.json"> -->
+
+
+
+
+
+
+
+
+</head>
+<!--header  -->
+
+<body>
+  <div style="display: flex; position: relative; flex-direction: row-reverse; height: 20px;">
+    <ul style="display: flex; flex-direction: row-reverse;">
+      <li style="text-decoration: none; list-style: none;">
+        <button class="button1" onclick="document.getElementById('id01').style.display='block'"
+          style="width:auto;">Login</button>
+
+        <div id="id01" class="modal">
+
+          <form class="modal-content animate" action="#home" method="post">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                title="Close Modal">&times;</span>
+              <img src="../images/yoga-2099080.png" alt="myOnlineYoga" class="avatar">
+            </div>
+
+            <div class="container">
+              <label id="userNameBox" for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+
+              <label id="passwordBox" for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+
+              <button id="loginButton" type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn">Cancel</button>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+        <script src="../javascript/firebase.js" type="module"></script>
+        <script>
+          // Get the modal
+          var modal = document.getElementById('id01');
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+        </script>
+      </li>
+
+      <li style="list-style: none;">
+        <button class="button2" onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign
+          Up</button>
+
+        <div id="id02" class="modal">
+          <span onclick="document.getElementById('id02').style.display='none'" class="close"
+            title="Close Modal">&times;</span>
+          <form class="modal-content" action=".id01">
+            <div class="container">
+              <h1>Sign Up</h1>
+              <p>Please fill in this form to create an account.</p>
+              <hr>
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+
+              <label for="psw-repeat"><b>Repeat Password</b></label>
+              <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+              <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+              </label>
+
+              <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+              <div class="clearfix">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                  class="cancelbtn">Cancel</button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <script>
+          // Get the modal
+          var modal = document.getElementById('id01');
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function (event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+        </script>
+      </li>
+    </ul>
+  </div>
+  <script>
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBf9OblieqT1VsgcIyqAEoj97_jVcWwbSM",
+      authDomain: "my-online-yoga.firebaseapp.com",
+      projectId: "my-online-yoga",
+      storageBucket: "my-online-yoga.appspot.com",
+      messagingSenderId: "570693058308",
+      appId: "1:570693058308:web:97a91d86e480d9bec5da51",
+      measurementId: "G-WFFM7WFWBF"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+
+
+
+
+
+
+  <!-- header bottom -->
+
+
+  <!-- ################################################################################################ -->
+
+
+
+
+
+
+
+
+
+  <!-- Menu >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>                   -->
+
+
+
+  <div class="wrapper">
+    <div class="container">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle
+                navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                class="icon-bar"></span> </button>
+            <a class="navbar-brand page-scroll" href="#main"><img src="../images/yoga-20990803.png" width="100"
+                height="100" alt="myOnlineYoga" style="color: goldenrod; font-family: cursive;" /></a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li><a class="page-scroll" href="#main">Home</a></li>
+              <li><a class="page-scroll" href="#services-container">Gallery</a></li>
+              <li><a class="page-scroll" href="#types">Type</a></li>
+              <li><a class="page-scroll" href="#our-team">Team</a></li>
+              <li><a class="page-scroll" href="#pricing-table">Pricing</a></li>
+              <li><a class="page-scroll" href="#contact-box">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+
+    <div class="main app form" id="main">
+      <!-- Main Section-->
+      <div class="hero-section">
+        <div class="container nopadding">
+          <div class="col-md-12">
+            <div class="hero-content text-center">
+              <h1 class="wow fadeInUp" data-wow-delay="0.1s">Yoga: A form of meditations of disciplined life</h1>
+              <p class="wow fadeInUp" data-wow-delay="0.2s">I know this to be true in my own life. My disciplined
+                practice began 20 years ago. Since then, I make certain I am on my yoga mat, moving through various
+                postures — every, single, day. To me, it feels as if this happened naturally.</p>
+              <div style="text-align:center">
+                <button onclick="playPause()"
+                  style="cursor: pointer; font-family: cursive; background-color:black; color:white; border-radius: 15px;">Play/Pause</button>
+                <button onclick="makeBig()"
+                  style="cursor: pointer; font-family: cursive; background-color: black; color:white; border-radius: 15px;">Big</button>
+                <button onclick="makeSmall()"
+                  style="cursor: pointer; font-family: cursive; background-color:black; color:white; border-radius: 15px;">Small</button>
+                <button onclick="makeNormal()"
+                  style="cursor: pointer; font-family: cursive; background-color: black; color:white; border-radius: 15px;">Normal</button>
+                <br><br>
+                <video id="video1" width="420">
+
+                  <source src="../video/Shilpa's Tips For A Healthy Mind And Body _ Shilpa Shetty Yoga _ MissMalini.mp4" type="video/mp4">
+
+                  Your browser does not support HTML video.
+                </video>
+              </div>
+
+              <script>
+                var myVideo = document.getElementById("video1");
+                function playPause() {
+                  if (myVideo.paused)
+                    myVideo.play();
+                  else
+                    myVideo.pause();
+                }
+
+                function makeBig() {
+                  myVideo.width = 560;
+                }
+
+                function makeSmall() {
+                  myVideo.width = 320;
+                }
+
+                function makeNormal() {
+                  myVideo.width = 420;
+                }
+              </script>
+
+              <p>Video courtesy of <a href="https://www.youtube.com/" target="_blank">Go to Youtube</a>.</p>
+
+
+              </section>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+
+  </script>
+  <!-- Gallery container >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.>> -->
+
+
+  <section id="services-container">
+    <h1 class="h-primary-center"
+      style="text-align: center; color: black; margin: 20px 20px; font-size: 3.3rem; text-shadow: 0 0 3px #FF0000; cursor: pointer;">
+      Our
+      Gallery</h1>
+    <div id="services">
+      <div class="box">
+        <img src="../images/trikonasana.jpg" alt="@@@@Hello@@@@">
+        <h2 class="h-secondary_center">Trikonasana</h2>
+        <p class="centre">The Trikonasana or the Triangle Pose is a Yoga posture that requires practitioners to keep
+          their eyes open, unlike most other asanas....</p>
+        <div class="btn1">
+          <a href="http://www.yogadaycelebration.com/trikonasana.html"><button class="btn">READ MORE</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="../images/yogasana.jpg" alt="@@@@Hello@@@@">
+        <h2 class="h-secondary_center">Yogasana</h2>
+        <p class="centre">The practice of Yoga is generally referred to as Yogasana. It is a practice that goes back
+          a
+          long way in time, and in recent years...</p>
+        <div class="btn1">
+          <a href="http://www.yogadaycelebration.com/yogasana.html"><button class="btn">READ MORE</button></a>
+        </div>
+      </div>
+      <div class="box">
+        <img src="../images/ushtrasana.jpg" alt="@@@@Hello@@@@">
+        <h2 class="h-secondary_center">Ushtrasana</h2>
+        <p class="centre">Ushtrasana is a Yoga pose in which the body of the practitioner that of a camel.
+          The
+          word ‘Ushtra’ is a Sanskrit word and it....</p>
+        <div class="btn1">
+          <a href="http://www.yogadaycelebration.com/ushtrasana.html"><button class="btn">READ MORE</button></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Types of Yoga >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+
+  <section id="types">
+    <div id="title"
+      style="text-align: center; color:black; margin: 20px 20px; font-family: cursive; font-size: 3.3rem; text-shadow: 0 0 3px #FF0000; cursor: pointer;">
+      Type of
+      Yoga
+      Postures
+    </div>
+    <div id="fh5co-destination">
+      <div class="tour-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <ul id="fh5co-destination-list" class="animate-box">
+              <li class="one-forth text-center" style="background-image: url(../images/ushtrasana.jpg); ">
+                <a href="http://www.yogadaycelebration.com/ushtrasana.html">
+                  <div class="case-studies-summary">
+                    <h2>Ushtrasana</h2>
+                  </div>
+                </a>
+              </li>
+              <li class="one-forth text-center" style="background-image: url(../images/uttanamandukasana.jpg); ">
+                <a href="http://www.yogadaycelebration.com/uttanamandukasana.html">
+                  <div class="case-studies-summary">
+                    <h2>Uttanamandukasana</h2>
+                  </div>
+                </a>
+              </li>
+              <li class="one-forth text-center" style="background-image: url(../images/Vajrasana.jpg); ">
+                <a href="http://www.yogadaycelebration.com/vajrasana.html">
+                  <div class="case-studies-summary">
+                    <h2>Vajrasana</h2>
+                  </div>
+                </a>
+              </li>
+              <li class="one-forth text-center" style="background-image: url(../images/yogasana.jpg); ">
+                <a href="http://www.yogadaycelebration.com/yogasana.html">
+                  <div class="case-studies-summary">
+                    <h2>Yogasana</h2>
+                  </div>
+                </a>
+              </li>
+
+              <li class="one-forth text-center" style="background-image: url(../images/dhanurasana.jpg); ">
+                <a href="http://www.yogadaycelebration.com/dhanurasana.html">
+                  <div class="case-studies-summary">
+                    <h2>Dhanurasana</h2>
+                  </div>
+                </a>
+              </li>
+              <li class="one-half text-center">
+                <div class="title-bg">
+                  <div class="case-studies-summary">
+                    <h2>Most Popular Yogas</h2>
+                    <span><a href="http://www.yogadaycelebration.com/type-of-yoga-postures.html">View All
+                        Yoga</a></span>
+                  </div>
+                </div>
+              </li>
+              <li class="one-forth text-center" style="background-image: url(../images/gomukhasana.jpg); ">
+                <a href="http://www.yogadaycelebration.com/gomukhasana.html">
+                  <div class="case-studies-summary">
+                    <h2>Gomukhasana</h2>
+                  </div>
+                </a>
+              </li>
+              <li class="one-forth text-center" style="background-image: url(../images/padmasana.jpg); ">
+                <a href="http://www.yogadaycelebration.com/padmasana.html">
+                  <div class="case-studies-summary">
+                    <h2>Padmasana</h2>
+                  </div>
+                </a>
+              </li>
+              <li class="one-forth text-center" style="background-image: url(../images/paschimottasana.jpg); ">
+                <a href="http://www.yogadaycelebration.com/paschimottanasana.html">
+                  <div class="case-studies-summary">
+                    <h2>Paschimottasana</h2>
+                  </div>
+                </a>
+              </li>
+              <li class="one-forth text-center" style="background-image: url(../images/simhasana.jpg); ">
+                <a href="http://www.yogadaycelebration.com/simhasana.html">
+                  <div class="case-studies-summary">
+                    <h2>Simhasana</h2>
+                  </div>
+                </a>
+              </li>
+              <li class="one-forth text-center" style="background-image: url(../images/trikonasana.jpg); ">
+                <a href="http://www.yogadaycelebration.com/trikonasana.html">
+                  <div class="case-studies-summary">
+                    <h2>Trikonasana</h2>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our team Container -->
+
+  <section id="our-team">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h1 class="title"
+              style="text-align: center; font-size: 3.3rem; margin: 20px 20px; font-family: cursive; color: black; cursor: pointer;text-shadow: 0 0 3px #FF0000;">
+              Our
+              Team
+            </h1>
+            <span class="line"></span>
+            <p style="text-align: center;">Every trainer should try to get the best possible resource persons on a
+              particular course.</p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="our-team-content">
+            <div class="row">
+
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                  <div class="team-member-img">
+                    <img src="../images/Govind.jpg" alt="team member img">
+                  </div>
+                  <div class="team-member-name">
+                    <p>Govind Singh</p>
+                    <span>Trainer</span>
+                  </div>
+                  <p>"A common misconception about yoga is that you have to be flexible or have a certain body
+                    type."
+                  </p>
+                  <div class="team-member-link">
+                    <i class="fab fa-facebook-f "></i>
+                    <i class="fab fa-twitter icon-scp"></i>
+                    <i class="fab fa-linkedin-in icon-scp"></i>
+                    <i class="fab fa-tumblr icon-scp"></i>
+                    <i class="fab fa-vimeo-v icon-scp"></i>
+                    <i class="fab fa-pinterest-p icon-scp"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                  <div class="team-member-img">
+                    <img src="../images/trainer1.jpg" alt="team member img">
+                  </div>
+                  <div class="team-member-name">
+                    <p>Archit Bhardwaj</p>
+                    <span>Trainer</span>
+                  </div>
+                  <p>“You’ll only be a beginner once, so enjoy the bumps and hiccups and keep the wonder of a
+                    beginner.”
+                  </p>
+                  <div class="team-member-link">
+                    <i class="fab fa-facebook-f "></i>
+                    <i class="fab fa-twitter icon-scp"></i>
+                    <i class="fab fa-linkedin-in icon-scp"></i>
+                    <i class="fab fa-tumblr icon-scp"></i>
+                    <i class="fab fa-vimeo-v icon-scp"></i>
+                    <i class="fab fa-pinterest-p icon-scp"></i>
+
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                  <div class="team-member-img">
+                    <img src="../images/trainer4.png" alt="team member img">
+                  </div>
+                  <div class="team-member-name">
+                    <p>Anurag Goswami</p>
+                    <span>Trainer</span>
+                  </div>
+                  <p>Even when our external world is intense, we can tend to our internal world.</p>
+                  <div class="team-member-link">
+                    <i class="fab fa-facebook-f "></i>
+                    <i class="fab fa-twitter icon-scp"></i>
+                    <i class="fab fa-linkedin-in icon-scp"></i>
+                    <i class="fab fa-tumblr icon-scp"></i>
+                    <i class="fab fa-vimeo-v icon-scp"></i>
+                    <i class="fab fa-pinterest-p icon-scp"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-team-member">
+                  <div class="team-member-img">
+                    <img src="../images/Govind.jpg" alt="team member img">
+                  </div>
+                  <div class="team-member-name">
+                    <p>Govind Singh</p>
+                    <span>Trainer</span>
+                  </div>
+                  <p>"My most physically challenging pose is placing my legs behind my head.</p>
+                  <div class="team-member-link">
+                    <i class="fab fa-facebook-f "></i>
+                    <i class="fab fa-twitter icon-scp"></i>
+                    <i class="fab fa-linkedin-in icon-scp"></i>
+                    <i class="fab fa-tumblr icon-scp"></i>
+                    <i class="fab fa-vimeo-v icon-scp"></i>
+                    <i class="fab fa-pinterest-p icon-scp"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Start Pricing table -->
+  <section id="pricing-table">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-area">
+            <h2 class="title"
+              style="text-align: center; font-size: 3.3rem; font-family: cursive; margin: 20px 20px; color: black; cursor: pointer;text-shadow: 0 0 3px #FF0000;">
+              Our
+              Pricing Tables</h2>
+            <span class="line"></span>
+            <p style="text-align: center;">A Yoga course format refers to the layout of a course. The course format can
+              be selected in Basic > Advanced > Professional > Exclusive </p>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="pricing-table-content">
+            <div class="row">
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-table-price wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+                  <div class="price-header">
+                    <span class="price-title">Basic</span>
+                    <div class="price">
+                      <sup class="price-up">₹</sup>
+                      1500
+                      <span class="price-down">/mo</span>
+                    </div>
+                  </div>
+                  <div class="price-article">
+                    <ul>
+                      <li>2GB Space</li>
+
+                      <li>Free Domain</li>
+                      <li>Free Email</li>
+                      <li>Unlimited Support</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a class="purchase-btn" href="checkoutform.html">Purchase</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-table-price wow fadeInUp" data-wow-duration="0.75s" data-wow-delay="0.75s">
+                  <div class="price-header">
+                    <span class="price-title">Advanced</span>
+                    <div class="price">
+                      <sup class="price-up">₹</sup>
+                      2000
+                      <span class="price-down">/mo</span>
+                    </div>
+                  </div>
+                  <div class="price-article">
+                    <ul>
+                      <li>2GB Space</li>
+
+                      <li>Free Domain</li>
+                      <li>Free Email</li>
+                      <li>Unlimited Support</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a class="purchase-btn" href="checkoutform.html">Purchase</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-table-price wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+                  <div class="price-header">
+                    <span class="price-title">Professional</span>
+                    <div class="price">
+                      <sup class="price-up">₹</sup>
+                      2500
+                      <span class="price-down">/mo</span>
+                    </div>
+                  </div>
+                  <div class="price-article">
+                    <ul>
+                      <li>2GB Space</li>
+                      <li>Free Domain</li>
+                      <li>Free Email</li>
+                      <li>Unlimited Support</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a class="purchase-btn" href="checkoutform.html">Purchase</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-table-price wow fadeInUp" data-wow-duration="1.15s" data-wow-delay="1.15s">
+                  <div class="price-header">
+                    <span class="price-title">Exclusive</span>
+                    <div class="price">
+                      <sup class="price-up">₹</sup>
+                      3000
+                      <span class="price-down">/mo</span>
+                    </div>
+                  </div>
+                  <div class="price-article">
+                    <ul>
+                      <li>2GB Space</li>
+
+                      <li>Free Domain</li>
+                      <li>Free Email</li>
+                      <li>Unlimited Support</li>
+                    </ul>
+                  </div>
+                  <div class="price-footer">
+                    <a class="purchase-btn" href="checkoutform.html">Purchase</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Contact Section >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+
+  <h1 id="contact-us"
+    style="margin: 20px 20px; color: black; cursor: pointer;text-shadow: 0 0 3px #FF0000; font-family: cursive; text-align: center; font-size: 3.3rem;">
+    Contact Us
+  </h1>
+  <div id="contact-box">
+    <form action="">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <br>
+        <input type="text" name="name" id="name" placeholder="Enter your Name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" name="name" id="email" placeholder="Enter your Email">
+      </div>
+      <div class="form-group">
+        <label for="number">Phone Number:</label>
+        <br>
+        <input type="number" name="name" id="number" placeholder="Enter your Number">
+
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <br>
+        <textarea name="name" id="message" cols="auto" rows="auto" placeholder="Enter your Message"></textarea>
+      </div>
+      <div class="btn1">
+        <a href="https://www.google.co.in/"><button class="btn">Submit</button></a>
+      </div>
+    </form>
+  </div>
+
+
+
+
+  <!-- footer >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+
+
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <img src="img/logo.png" alt="myOnlineYoga">
+            <p>Learn Yoga Asanas & Meditation, Free Trial Classes Available. Register Today! Learn Yoga Asanas &
+              Meditation Commit To Your Health. Join Now ! Free Online Trial Classes. Beginners To Advanced. Classes
+              Start At 8 AM. Online Yoga Classes. Classes & Workshops.</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> <a href="#main">Home</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#services-container">Gallery</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#types">Type</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#our-team">Team</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#contact-box">Contact Us</a></li>
+            </ul>
+          </div>
+
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              HRC - Harizon<br>
+              Bodla Road<br>
+              Agra <br>
+              <strong>Phone:</strong> 7248384624<br>
+              <strong>Email:</strong> govindsingh04627@gmail.com<br>
+            </p>
+
+            <div class="social-links">
+              <i class="fab fa-facebook-f "></i>
+              <i class="fab fa-twitter icon-scp"></i>
+              <i class="fab fa-linkedin-in icon-scp"></i>
+              <i class="fab fa-tumblr icon-scp"></i>
+              <i class="fab fa-vimeo-v icon-scp"></i>
+              <i class="fab fa-pinterest-p icon-scp"></i>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <footer>
+    <div class="center">
+      Copyright &copy; www.myOnlineYoga.com. All right reserved!
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
